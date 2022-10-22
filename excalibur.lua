@@ -1,6 +1,13 @@
 if not game:IsLoaded() then game.Loaded:Wait() end
 if game.PlaceId ~= 258258996 then return end
 
+--// EXCALIBUR INITIALIZATION
+
+getgenv().Excalibur = {}
+getgenv().Excalibur.Data = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/data.lua", true))()
+getgenv().Excalibur.Items = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/items.lua", true))()
+getgenv().Excalibur.Automation = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/automation.lua", true))()
+
 --// SERVICES
 
 local players = game:GetService("Players")
@@ -18,13 +25,6 @@ local playerGui = player:WaitForChild("PlayerGui")
 local gui = playerGui:WaitForChild("GUI") 					-- also counts as dependant :P
 local craftsman = gui:WaitForChild("Craftsman")
 local draedon = gui:WaitForChild("SuperstitiousCrafting")
-
---// EXCALIBUR INITIALIZATION
-
-getgenv().Excalibur = {}
-getgenv().Excalibur.Data = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/data.lua", true))()
-getgenv().Excalibur.Items = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/items.lua", true))()
-getgenv().Excalibur.Automation = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/automation.lua", true))()
 
 --// DEPENDANT VARIABLES
 
