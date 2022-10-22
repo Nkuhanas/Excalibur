@@ -57,7 +57,7 @@ local function assignItem(item)
 		end 
 	end
 	
-	for name, category in pairs(types) do
+	for name, category in pairs(data.Types) do
 		if model:FindFirstChild(name) then
 			
 			if name == "Lava" and model:FindFirstChild(name):FindFirstChild("TeleportSend") then --// teleporter
