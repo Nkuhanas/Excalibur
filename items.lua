@@ -51,7 +51,6 @@ local function assignItem(item)
 		for x = #v, 1, -1 do
 			if string.find(model.Parent.Name, v[x]) then 
 				items.Resetters[i] = model:FindFirstChild("Upgrade")
-				print("Found resetter: "..item.Name)
 				return
 			end 
 		end 
