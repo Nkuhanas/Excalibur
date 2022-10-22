@@ -22,4 +22,16 @@ data.Types = {
 	Drop = "Droppers",
 }
 
+data.Halloween = {
+	Mines = {
+		"Swintite Mine",
+		"Pumpkinite Mine",
+	},
+	Furnaces = {
+    		"Candy Center",
+    		"Candy Factory",
+    		"Candy Metropolis",
+	}
+}
+
 return data
