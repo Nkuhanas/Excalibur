@@ -15,11 +15,11 @@ data.Boxes = {
 }
 
 data.Types = {
-	Upgrade = Upgraders,
-	Lava = Furnaces,
-	Cannon = Upgraders,
-	Scan = Upgraders,
-	Drop = Droppers,
+	Upgrade = "Upgraders",
+	Lava = "Furnaces",
+	Cannon = "Upgraders",
+	Scan = "Upgraders",
+	Drop = "Droppers",
 }
 
 return data
