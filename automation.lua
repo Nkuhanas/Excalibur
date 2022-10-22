@@ -125,7 +125,7 @@ end
 
 local function oreBoost(latency)
 	if not oreBoostingEnabled then
-		recursive(items)
+		recursive(items.Upgraders)
 		oreBoostingEnabled = items.Ores.ChildAdded:Connect(function(ore)
 			boostOre(ore, latency or 0.025)
 		end)
