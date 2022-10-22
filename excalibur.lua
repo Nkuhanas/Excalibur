@@ -105,8 +105,8 @@ inputHandler(function() sendNotification("Auto rebirthing "..valToText(getgenv()
 inputHandler(openCraftsman, Enum.KeyCode.Seven)
 inputHandler(openDraedon, Enum.KeyCode.Eight)
 
-inputHandler(function() sendNotification("Auto Box set to: "..tostring(getgenv().Excalibur.Automation.Cycles.BoxCycle()).." box") end, Enum.KeyCode.Plus)
-inputHandler(function() sendNotification("Rebirth layout set to: Layout "..tostring(getgenv().Excalibur.Automation.Cycles.LayoutCycle())) end, Enum.KeyCode.Minus)
+inputHandler(function() sendNotification("Auto Box set to: "..tostring(getgenv().Excalibur.Automation.Cycles.BoxCycle()).." box") end, Enum.KeyCode.Comma)
+inputHandler(function() sendNotification("Rebirth layout set to: Layout "..tostring(getgenv().Excalibur.Automation.Cycles.LayoutCycle())) end, Enum.KeyCode.Period)
 
 --// START
 
