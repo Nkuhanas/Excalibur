@@ -8,7 +8,11 @@ local function loadContent(name)
 	repeat
 		content = game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/"..name..".lua", true)
 	until content
-	return loadstring(content)()
+	local ret
+	repeat
+		ret = loadstring(content)()
+	until ret
+	return ret
 end
 
 getgenv().Excalibur = {}
