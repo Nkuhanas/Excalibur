@@ -10,8 +10,8 @@ local player = players.LocalPlayer
 
 --// DATA
 
-local items = getgenv().Excalibur.Items
-local data = getgenv().Excalibur.Data
+local items = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/items.lua", true))()
+local data = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/data.lua", true))()
 	
 --// DEPENDANT VARIABLES
 
