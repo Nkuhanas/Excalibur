@@ -6,11 +6,11 @@ if game.PlaceId ~= 258258996 then return end
 local function loadContent(name)
 	local content
 	repeat
-		content = game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/"..name..".lua", true)
+		content = game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/"..name..".lua", true) task.wait()
 	until content
 	local ret
 	repeat
-		ret = loadstring(content)()
+		ret = loadstring(content)() task.wait()
 	until ret
 	return ret
 end
