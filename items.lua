@@ -12,7 +12,7 @@ local tycoon = workspace:WaitForChild("Tycoons"):WaitForChild(factory)
 
 --// DATA
 
-local data = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/data.lua", true))()
+local data = getgenv().Excalibur.Data
 
 --// VARIABLES
 
