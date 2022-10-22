@@ -55,6 +55,8 @@ local function assignItem(item)
 	
 	local model = item:WaitForChild("Model")
 	
+	print(item.Name)
+	
 	for i,v in pairs(data.Resetters) do 
 		for x = #v, 1, -1 do
 			if string.find(model.Parent.Name, v[x]) then 
