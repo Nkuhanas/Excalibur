@@ -112,9 +112,20 @@ local function boostOre(ore, latency)
 	end)
 end
 
+---[[
+function recursive(tbl)
+ for i,v in pairs(tbl) do
+  if typeof(v) == "table" then
+   recursive(v)
+  end
+  print(i," | ",v)
+ end
+end
+--]]
+
 local function oreBoost(latency)
 	if not oreBoostingEnabled then
-		print(items.Upgraders)
+		recursive(items)
 		oreBoostingEnabled = items.Ores.ChildAdded:Connect(function(ore)
 			boostOre(ore, latency or 0.025)
 		end)
