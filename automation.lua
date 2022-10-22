@@ -114,6 +114,7 @@ end
 
 local function oreBoost(latency)
 	if not oreBoostingEnabled then
+		print(items.Upgraders)
 		oreBoostingEnabled = items.Ores.ChildAdded:Connect(function(ore)
 			boostOre(ore, latency or 0.025)
 		end)
