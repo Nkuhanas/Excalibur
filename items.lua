@@ -47,10 +47,11 @@ local function assignItem(item)
 	
 	local model = item:WaitForChild("Model")
 	
-	for i,v in pairs(data.Resetters)do 
+	for i,v in pairs(data.Resetters) do 
 		for x = #v, 1, -1 do
 			if string.find(model.Parent.Name, v[x]) then 
 				items.Resetters[i] = model:FindFirstChild("Upgrade")
+				print("Found resetter: "..item.Name)
 				return
 			end 
 		end 
@@ -74,6 +75,7 @@ local function assignItem(item)
 			--end
 			
 			items[category][#items[category]+1] = model:FindFirstChild(name)
+			print("added "..item.Name..", to category "..category)
 			return
 		end
 	end
