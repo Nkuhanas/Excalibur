@@ -61,7 +61,7 @@ local function assignItem(item)
 			
 			if name == "Lava" and model:FindFirstChild(name):FindFirstChild("TeleportSend") then --// teleporter
 				items.Teleporters[#items.Teleporters+1] = model:FindFirstChild(name) 
-				break
+				return
 			end
 			
 			if name == "Upgrade" then --// get all upgraders
@@ -70,11 +70,11 @@ local function assignItem(item)
 						items.Upgraders[#items.Upgraders+1] = v 
 					end
 				end
-				break
+				return
 			end
 			
 			items[category][#items[category]+1] = model:FindFirstChild(name)
-			break
+			return
 		end
 	end
 end
