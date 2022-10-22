@@ -3,11 +3,19 @@ if game.PlaceId ~= 258258996 then return end
 
 --// EXCALIBUR INITIALIZATION
 
-getgenv().Excalibur = {
-	Data = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/data.lua", true))(),
-	Items = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/items.lua", true))(),
-	Automation = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/automation.lua", true))(),
-}
+local function loadContent(name)
+	local content
+	repeat
+		content = game:HttpGet("https://raw.githubusercontent.com/Nkuhanas/Excalibur/main/"..name..".lua", true)
+	until content
+	return loadstring(content)()
+end
+
+getgenv().Excalibur = {}
+getgenv().Excalibur.Data = loadContent("data")
+getgenv().Excalibur.Items = loadContent("items")
+getgenv().Excalibur.Automation = loadContent("automation")
+
 
 --// SERVICES
 
