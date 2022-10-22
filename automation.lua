@@ -57,7 +57,7 @@ local function autoRebirth()
 	autoRebirthEnabled = not autoRebirthEnabled
 	if autoRebirthEnabled then
 		task.spawn(function()
-			while true do
+			while autoRebirthEnabled do
 				task.wait(0.1)
 				if (getMoney() or 0) >= moneyLib.RebornPrice(player) then
 					rebirthRemote:InvokeServer()
