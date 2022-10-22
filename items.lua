@@ -14,6 +14,14 @@ local tycoon = workspace:WaitForChild("Tycoons"):WaitForChild(factory)
 
 local data = getgenv().Excalibur.Data
 
+local types = {
+	Upgrade = Upgraders,
+	Lava = Furnaces,
+	Cannon = Upgraders,
+	Scan = Upgraders,
+	Drop = Droppers,
+}
+
 --// VARIABLES
 
 local items = setmetatable({Ores = ores, Tycoon = tycoon, Factory = factory}, {__newindex = function(x, y, z)
@@ -57,7 +65,7 @@ local function assignItem(item)
 		end 
 	end
 	
-	for name, category in pairs(data.Types) do
+	for name, category in pairs(types) do
 		print(name, category)
 		if model:FindFirstChild(name) then
 			
@@ -66,14 +74,14 @@ local function assignItem(item)
 				return
 			end
 			
-			--if name == "Upgrade" then --// get all upgraders
-			--	for _, v in ipairs(model:GetChildren()) do 
-			--		if v.Name:sub(1,7) == "Upgrade"and #v.Name <= 8 then 
-			--			items.Upgraders[#items.Upgraders+1] = v 
-			--		end
-			--	end
-			--	return
-			--end
+			if name == "Upgrade" then --// get all upgraders
+				for _, v in ipairs(model:GetChildren()) do 
+					if v.Name:sub(1,7) == "Upgrade"and #v.Name <= 8 then 
+						items.Upgraders[#items.Upgraders+1] = v 
+					end
+				end
+				return
+			end
 			
 			items[category][#items[category]+1] = model:FindFirstChild(name)
 			print("added "..item.Name..", to category "..category)
